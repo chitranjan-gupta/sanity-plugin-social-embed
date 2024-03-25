@@ -1,28 +1,33 @@
-import {Box, Stack} from '@sanity/ui'
+import {Card, Container, Stack, studioTheme, ThemeProvider} from '@sanity/ui'
 import React from 'react'
 import {Tweet} from 'react-tweet'
-import {ObjectInputProps, ObjectSchemaType} from 'sanity'
 
 export type TwitterObject = {
-  id: string
-}
-
-export type TwitterProps = ObjectInputProps<TwitterObject, ObjectSchemaType>
-
-export function TwitterPreview(props: TwitterProps): React.JSX.Element {
-  return (
-    <Stack space={3}>
-      {
-        <Box style={{position: 'relative'}}>
-          {!!props.value?.id && <Tweet id={props.value?.id} />}
-        </Box>
+  actions: {
+    props: {
+      value: {
+        id: string
       }
-    </Stack>
-  )
+    }
+  }
 }
 
-export function createScopedTwitterInputComponent() {
-  return function ScopedInputComponent(props: TwitterProps): React.JSX.Element {
-    return <TwitterPreview {...props} />
-  }
+export function TwitterPreview(props: TwitterObject): React.JSX.Element {
+  // eslint-disable-next-line no-console
+  console.log(props)
+  return (
+    <ThemeProvider theme={studioTheme}>
+      <Container>
+        <Card padding={4}>
+          <Stack space={3}>
+            {!!props.actions.props.value.id && (
+              <Card>
+                <Tweet id={props.actions.props.value.id} />
+              </Card>
+            )}
+          </Stack>
+        </Card>
+      </Container>
+    </ThemeProvider>
+  )
 }

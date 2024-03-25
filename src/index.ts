@@ -1,6 +1,6 @@
 import {definePlugin} from 'sanity'
 
-import {createScopedTwitterInputComponent} from './components/TwitterPreview'
+import {TwitterPreview} from './components/TwitterPreview'
 import {YoutubePreview} from './components/YoutubePreview'
 
 interface SocialMediaConfig {
@@ -48,10 +48,12 @@ export const socialMedia = definePlugin<SocialMediaConfig | void>((config = {}) 
           },
         },
         {
-          name: 'twitterembed',
+          name: 'xembed',
           title: 'X Embed',
           type: 'object',
-          components: createScopedTwitterInputComponent(),
+          components: {
+            preview: TwitterPreview,
+          },
           fields: [
             {
               name: 'id',
@@ -60,6 +62,9 @@ export const socialMedia = definePlugin<SocialMediaConfig | void>((config = {}) 
               validation: (Rule) => Rule.required(),
             },
           ],
+          initialValue: {
+            id: '1772101605745184874',
+          },
         },
       ],
     },
