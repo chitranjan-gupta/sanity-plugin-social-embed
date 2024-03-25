@@ -50,7 +50,7 @@ jobs:
         with:
           cache: npm
           node-version: lts/*
-      - run: npm clean-install
+      - run: npm clean-install --force
         # Linting can be skipped
       - run: npm run lint --if-present
         if: github.event.inputs.test != 'false'
