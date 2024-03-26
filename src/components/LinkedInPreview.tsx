@@ -1,6 +1,6 @@
 import {Card, Container, Stack, studioTheme, ThemeProvider} from '@sanity/ui'
-import {LinkedInEmbed} from 'react-social-media-embed'
 import React from 'react'
+import {LinkedInEmbed} from 'react-social-media-embed'
 
 export type LinkedInObject = {
   actions: {

@@ -1,6 +1,6 @@
 import {Card, Container, Stack, studioTheme, ThemeProvider} from '@sanity/ui'
-import {InstagramEmbed} from 'react-social-media-embed'
 import React from 'react'
+import {InstagramEmbed} from 'react-social-media-embed'
 
 export type InstagramObject = {
   actions: {

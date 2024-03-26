@@ -1,6 +1,6 @@
 import {Card, Container, Stack, studioTheme, ThemeProvider} from '@sanity/ui'
-import {YouTubeEmbed} from 'react-social-media-embed'
 import React from 'react'
+import {YouTubeEmbed} from 'react-social-media-embed'
 
 export type YoutubeObject = {
   actions: {

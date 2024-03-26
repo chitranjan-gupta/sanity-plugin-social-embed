@@ -1,10 +1,10 @@
 import {definePlugin} from 'sanity'
 
+import {FacebookPreview} from './components/FacebookPreview'
+import {InstagramPreview} from './components/InstagramPreview'
+import {LinkedInPreview} from './components/LinkedInPreview'
 import {TwitterPreview} from './components/TwitterPreview'
 import {YoutubePreview} from './components/YoutubePreview'
-import {InstagramPreview} from './components/InstagramPreview'
-import {FacebookPreview} from './components/FacebookPreview'
-import {LinkedInPreview} from './components/LinkedInPreview'
 
 interface SocialMediaConfig {
   /* nothing here yet */
