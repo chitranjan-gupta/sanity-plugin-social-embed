@@ -1,6 +1,6 @@
 import {Card, Container, Stack, studioTheme, ThemeProvider} from '@sanity/ui'
+import {YouTubeEmbed} from 'react-social-media-embed'
 import React from 'react'
-import YoutubePlayer from 'react-player/youtube'
 
 export type YoutubeObject = {
   actions: {
@@ -13,16 +13,14 @@ export type YoutubeObject = {
 }
 
 export function YoutubePreview(props: YoutubeObject): React.JSX.Element {
-  // eslint-disable-next-line no-console
-  console.log(props)
   return (
     <ThemeProvider theme={studioTheme}>
-      <Container>
-        <Card padding={4}>
-          <Stack space={3}>
+      <Container height="fill">
+        <Card padding={4} height="fill">
+          <Stack space={1} height="fill">
             {!!props.actions.props.value.url && (
-              <Card>
-                <YoutubePlayer url={props.actions.props.value.url} />
+              <Card height="fill">
+                <YouTubeEmbed url={props.actions.props.value.url} width={325} height={220} />
               </Card>
             )}
           </Stack>

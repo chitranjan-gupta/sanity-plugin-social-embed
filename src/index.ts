@@ -2,6 +2,9 @@ import {definePlugin} from 'sanity'
 
 import {TwitterPreview} from './components/TwitterPreview'
 import {YoutubePreview} from './components/YoutubePreview'
+import {InstagramPreview} from './components/InstagramPreview'
+import {FacebookPreview} from './components/FacebookPreview'
+import {LinkedInPreview} from './components/LinkedInPreview'
 
 interface SocialMediaConfig {
   /* nothing here yet */
@@ -22,8 +25,6 @@ interface SocialMediaConfig {
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const socialMedia = definePlugin<SocialMediaConfig | void>((config = {}) => {
-  // eslint-disable-next-line no-console
-  console.log('hello from sanity-plugin-social-embed')
   return {
     name: 'sanity-plugin-social-embed',
     schema: {
@@ -43,13 +44,10 @@ export const socialMedia = definePlugin<SocialMediaConfig | void>((config = {}) 
               validation: (Rule) => Rule.required(),
             },
           ],
-          initialValue: {
-            url: 'https://www.youtube.com/watch?v=LXb3EKWsInQ',
-          },
         },
         {
-          name: 'xembed',
-          title: 'X Embed',
+          name: 'twitterembed',
+          title: 'Twitter Embed',
           type: 'object',
           components: {
             preview: TwitterPreview,
@@ -62,9 +60,54 @@ export const socialMedia = definePlugin<SocialMediaConfig | void>((config = {}) 
               validation: (Rule) => Rule.required(),
             },
           ],
-          initialValue: {
-            id: '1772101605745184874',
+        },
+        {
+          name: 'instagramembed',
+          title: 'Instagram Embed',
+          type: 'object',
+          components: {
+            preview: InstagramPreview,
           },
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'Instagram Post URL',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          name: 'facebookembed',
+          title: 'Facebook Embed',
+          type: 'object',
+          components: {
+            preview: FacebookPreview,
+          },
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'Facebook Post URL',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          name: 'linkedinembed',
+          title: 'LinkedIn Embed',
+          type: 'object',
+          components: {
+            preview: LinkedInPreview,
+          },
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'LinkedIn Post URL',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
         },
       ],
     },

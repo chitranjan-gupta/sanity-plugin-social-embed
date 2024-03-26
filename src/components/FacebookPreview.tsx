@@ -1,8 +1,8 @@
 import {Card, Container, Stack, studioTheme, ThemeProvider} from '@sanity/ui'
-import {InstagramEmbed} from 'react-social-media-embed'
+import {FacebookEmbed} from 'react-social-media-embed'
 import React from 'react'
 
-export type InstagramObject = {
+export type FacebookObject = {
   actions: {
     props: {
       value: {
@@ -12,7 +12,7 @@ export type InstagramObject = {
   }
 }
 
-export function InstagramPreview(props: InstagramObject): React.JSX.Element {
+export function FacebookPreview(props: FacebookObject): React.JSX.Element {
   return (
     <ThemeProvider theme={studioTheme}>
       <Container height="fill">
@@ -20,7 +20,7 @@ export function InstagramPreview(props: InstagramObject): React.JSX.Element {
           <Stack space={1} height="fill">
             {!!props.actions.props.value.url && (
               <Card height="fill">
-                <InstagramEmbed url={props.actions.props.value.url} width={328} />
+                <FacebookEmbed url={props.actions.props.value.url} width={328} />
               </Card>
             )}
           </Stack>

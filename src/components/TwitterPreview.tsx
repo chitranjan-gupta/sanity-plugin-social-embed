@@ -13,15 +13,13 @@ export type TwitterObject = {
 }
 
 export function TwitterPreview(props: TwitterObject): React.JSX.Element {
-  // eslint-disable-next-line no-console
-  console.log(props)
   return (
     <ThemeProvider theme={studioTheme}>
-      <Container>
-        <Card padding={4}>
-          <Stack space={3}>
+      <Container height="fill">
+        <Card padding={2} height="fill">
+          <Stack space={1} height="fill">
             {!!props.actions.props.value.id && (
-              <Card>
+              <Card height="fill">
                 <Tweet id={props.actions.props.value.id} />
               </Card>
             )}

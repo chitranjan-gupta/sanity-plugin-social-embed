@@ -3,14 +3,19 @@
 > This is a **Sanity Studio v3** plugin.
 
 # Development
+
 ## Run the following command in sanity studio project
+
 ## For yarn
-yalc add --link sanity-plugin-social-embed && yarn install
+
+npx yalc add --link sanity-plugin-social-embed && yarn install
 
 ## For npm
+
 npx yalc add sanity-plugin-social-embed && npx yalc link sanity-plugin-social-embed && npm install
 
 # Production
+
 ## Installation
 
 ```sh
@@ -43,10 +48,13 @@ with default configuration for build & watch scripts.
 See [Testing a plugin in Sanity Studio](https://github.com/sanity-io/plugin-kit#testing-a-plugin-in-sanity-studio)
 on how to run this plugin with hotreload in the studio.
 
-
 ### Release new version
 
 Run ["CI & Release" workflow](https://github.com/chitranjan-gupta/sanity-plugin-social-embed/actions/workflows/main.yml).
 Make sure to select the main branch and check "Release new version".
 
 Semantic release will only release on configured branches, so it is safe to run release on any branch.
+
+## Sources:
+
+1.  https://www.npmjs.com/package/react-social-media-embed
