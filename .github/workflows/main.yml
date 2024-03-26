@@ -48,14 +48,14 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          cache: npm
+          cache: yarn
           node-version: lts/*
-      - run: npm clean-install --force
+      - run: yarn install
         # Linting can be skipped
-      - run: npm run lint --if-present
+      - run: yarn lint
         if: github.event.inputs.test != 'false'
         # But not the build script, as semantic-release will crash if this command fails so it makes sense to test it early
-      - run: npm run prepublishOnly --if-present
+      - run: yarn prepublishOnly
 
   test:
     needs: build
@@ -88,10 +88,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          cache: npm
+          cache: yarn
           node-version: ${{ matrix.node }}
-      - run: npm install --force
-      - run: npm test --if-present
+      - run: yarn install
+      - run: yarn test
 
   release:
     permissions:
@@ -112,10 +112,10 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          cache: npm
+          cache: yarn
           node-version: lts/*
-      - run: npm clean-install --force
-      - run: npm audit signatures
+      - run: yarn install
+      - run: yarn audit signatures
         # Branches that will release new versions are defined in .releaserc.json
         # @TODO remove --dry-run after verifying everything is good to go
       - run: npx semantic-release --dry-run
