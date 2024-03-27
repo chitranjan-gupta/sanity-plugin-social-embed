@@ -17,6 +17,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/chitranjan-gupta/sanity-plugin-social-embed.git"
   },
+  "publishConfig": { "access": "public" },
   "license": "MIT",
   "author": "Chitranjan Gupta <chitranjankumargupta123@gmail.com>",
   "exports": {
