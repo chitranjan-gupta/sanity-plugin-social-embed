@@ -2668,10 +2668,10 @@
     lodash "^4.17.21"
     object-inspect "^1.6.0"
 
-"@sanity/semantic-release-preset@^4.1.7":
-  version "4.1.7"
-  resolved "https://registry.npmjs.org/@sanity/semantic-release-preset/-/semantic-release-preset-4.1.7.tgz"
-  integrity sha512-cj78W8G2Y34V3zivvW5YrPKCtLQ/dd+y62M0Gg9Zl+xH3O+srtzbINrsD5qe+27en05B7gYv5CAjoWoWCq2y9w==
+"@sanity/semantic-release-preset@4.1.6":
+  version "4.1.6"
+  resolved "https://registry.yarnpkg.com/@sanity/semantic-release-preset/-/semantic-release-preset-4.1.6.tgz#ceaf0ff1f3a2def712e345dfbf295ff5ad95b5b2"
+  integrity sha512-Ru2DoVMGPzkgy4ypeVmrkbn3e/fCDQw9v/S/pitiH2zDx86wlDOEdC6HfM5mE9ILboKsnvVn1nAFegXzUcv/kg==
   dependencies:
     "@semantic-release/changelog" "^6.0.3"
     "@semantic-release/exec" "^6.0.3"
