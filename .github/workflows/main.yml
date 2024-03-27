@@ -88,10 +88,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          cache: npm
+          cache: yarn
           node-version: ${{ matrix.node }}
-      - run: npm ci
-      - run: npm run test --if-present
+      - run: yarn install
+      - run: yarn test
 
   release:
     permissions:

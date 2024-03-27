@@ -46,10 +46,12 @@
     "lint": "eslint .",
     "prepublishOnly": "run-s build",
     "watch": "pkg-utils watch --strict",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@sanity/incompatible-plugin": "^1.0.4",
+    "jest": "^29.7.0",
     "react-player": "^2.15.1",
     "react-social-media-embed": "^2.5.9",
     "react-tweet": "^3.2.0"
@@ -81,7 +83,7 @@
     "rimraf": "^5.0.5",
     "sanity": "^3.35.2",
     "styled-components": "^6.1.8",
-    "typescript": "^5.4.3"
+    "typescript": "5.4.2"
   },
   "peerDependencies": {
     "react": "^18",
